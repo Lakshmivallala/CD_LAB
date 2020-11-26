@@ -1,0 +1,30 @@
+Program 1 of Week 1: Implementation of Language recogniser Lab exercise
+
+Implementation of Language recognizer for set of all strings over input alphabet ∑={0,1} containing even number of 0’s and even number of 1’s.
+
+Solution:
+The language L consists of the following strings that are acceptable:
+
+L= {ε,00,1111,0101,1010,00001111,............}
+
+L consists of the strings such that n(0's)/2==0 and n(1's)/2==0.
+Epsilon (ε) also belongs to L since (0%2)==0.
+
+The strings can be categorized in one of the following:
+
+1. Even number of 0's and Even number of 1's (EE) ----> q0
+2. Odd number of 0's and Even number of 1's (OE)  ----> q1
+3. Odd number of 0's and Odd number of 1's (OO)   ----> q2
+4. Even number of 0's and Odd number of 1's (EO)  ----> q3
+
+For DFA/Transition diagram- (https://tinyurl.com/y5drzw3e)
+Deterministic Finite Automata is our machine M that accepts a single character at each time. 
+DFA M={Q,∑,δ,Q0,F}
+Q={q0,q1,q2,q3}, ∑={0,1}, Q0=q0, F=q0
+δ=
+{
+δ(q0->0)=>q1,(EE->OE);	δ(q0->1)=>q3,(EE->EO);
+δ(q1->0)=>q0,(OE->EE);	δ(q1->1)=>q2,(OE->OO);
+δ(q2->0)=>q3,(OO->EO);	δ(q2->1)=>q1,(OO->OE);
+δ(q3->0)=>q2,(EO->OO);	δ(q3->1)=>qo,(EO->EE);
+}

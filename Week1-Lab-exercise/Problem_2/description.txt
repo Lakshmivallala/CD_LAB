@@ -1,0 +1,22 @@
+Program 2 of Week 1: Implementation of Language recogniser Lab exercise
+
+2. Implementation of Language recognizer for a set of all strings over input alphabet ∑={0,1} ending with two symbols of the same type.
+ 
+Solution:
+The language L consists of the following strings that are acceptable:
+
+L= {00,11,0100,10111,00111,0111,1000,1100011,010001011......}
+
+For DFA/Transition diagram- (https://tinyurl.com/y68dxkwy)
+DFA M={Q,∑,δ,Q0,F}
+Q={q0,q1,q2,q3,q4}, ∑={0,1}, Q0=q0, F={q2,q4}
+δ=
+{
+δ(q0->0)=>q1, δ(q0->1)=>q3;
+δ(q1->0)=>q2, δ(q1->1)=>q3;
+δ(q2->0)=>q2, δ(q2->1)=>q3;
+δ(q3->0)=>q1, δ(q3->1)=>q4;
+δ(q4->0)=>q1, δ(q4->1)=>q4;
+}
+
+
